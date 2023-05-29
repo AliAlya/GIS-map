@@ -1,0 +1,786 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.38.2 -->
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <object class="GtkTextBuffer" id="directionsBuffer"/>
+  <object class="GtkWindow" id="MainWindow">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="title">Nomadik</property>
+    <property name="default-width">800</property>
+    <property name="default-height">600</property>
+    <child>
+      <!-- n-columns=2 n-rows=3 -->
+      <object class="GtkGrid" id="OuterGrid">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkStatusbar" id="StatusBar">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="halign">end</property>
+            <property name="valign">center</property>
+            <property name="orientation">vertical</property>
+            <property name="spacing">2</property>
+          </object>
+          <packing>
+            <property name="left-attach">0</property>
+            <property name="top-attach">1</property>
+            <property name="width">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkOverlay">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <child>
+              <object class="GtkDrawingArea" id="MainCanvas">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="hexpand">True</property>
+                <property name="vexpand">True</property>
+              </object>
+              <packing>
+                <property name="pass-through">True</property>
+                <property name="index">-1</property>
+              </packing>
+            </child>
+            <child type="overlay">
+              <!-- n-columns=2 n-rows=2 -->
+              <object class="GtkGrid" id="searches">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="halign">start</property>
+                <property name="valign">start</property>
+                <child>
+                  <object class="GtkComboBoxText" id="intersectionSearch2">
+                    <property name="name">second</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="has-entry">True</property>
+                    <child internal-child="entry">
+                      <object class="GtkEntry" id="entry2">
+                        <property name="name">2</property>
+                        <property name="can-focus">True</property>
+                        <property name="max-width-chars">30</property>
+                        <property name="placeholder-text" translatable="yes">Second Street</property>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="left-attach">0</property>
+                    <property name="top-attach">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkComboBoxText" id="intersectionSearch1">
+                    <property name="name">first</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="has-entry">True</property>
+                    <child internal-child="entry">
+                      <object class="GtkEntry" id="entry1">
+                        <property name="name">1</property>
+                        <property name="can-focus">True</property>
+                        <property name="placeholder-text" translatable="yes">First Street</property>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="left-attach">0</property>
+                    <property name="top-attach">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="clearButton">
+                    <property name="label" translatable="yes">Clear</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                  </object>
+                  <packing>
+                    <property name="left-attach">1</property>
+                    <property name="top-attach">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="intersectionButton1">
+                    <property name="label">Find</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <property name="image-position">top</property>
+                    <property name="always-show-image">True</property>
+                  </object>
+                  <packing>
+                    <property name="left-attach">1</property>
+                    <property name="top-attach">1</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="index">3</property>
+              </packing>
+            </child>
+            <child type="overlay">
+              <!-- n-columns=1 n-rows=3 -->
+              <object class="GtkGrid">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="halign">end</property>
+                <property name="valign">end</property>
+                <child>
+                  <object class="GtkExpander" id="cityExpander">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="halign">end</property>
+                    <property name="valign">end</property>
+                    <property name="margin-bottom">4</property>
+                    <child>
+                      <!-- n-columns=3 n-rows=2 -->
+                      <object class="GtkGrid" id="citySelectGrid">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="halign">start</property>
+                        <property name="valign">end</property>
+                        <child>
+                          <object class="GtkButton" id="citySelectButton">
+                            <property name="label" translatable="yes">GO</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">True</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">2</property>
+                            <property name="top-attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="label" translatable="yes">City:</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">0</property>
+                            <property name="top-attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="weatherUpdateButton">
+                            <property name="label" translatable="yes">Weather Update</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">True</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">0</property>
+                            <property name="top-attach">1</property>
+                            <property name="width">3</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkComboBoxText" id="citySelectBox">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="active">0</property>
+                            <items>
+                              <item id="toronto_canada" translatable="yes">Toronto</item>
+                              <item id="hong-kong_china" translatable="yes">Hong Kong</item>
+                              <item id="new-york_usa" translatable="yes">New York</item>
+                              <item id="hamilton_canada" translatable="yes">Hamilton</item>
+                              <item id="beijing_china" translatable="yes">Beijing</item>
+                              <item id="cairo_egypt" translatable="yes">Cairo</item>
+                              <item id="cape-town_south-africa" translatable="yes">Cape Town</item>
+                              <item id="golden-horseshoe_canada" translatable="yes">Golden Horseshoe</item>
+                              <item id="iceland" translatable="yes">Iceland</item>
+                              <item id="interlaken_switzerland" translatable="yes">Interlaken</item>
+                              <item id="kyiv_ukraine" translatable="yes">Kyiv</item>
+                              <item id="london_england" translatable="yes">London</item>
+                              <item id="new-delhi_india" translatable="yes">New-Delhi</item>
+                              <item id="rio-de-janeiro_brazil" translatable="yes">Rio De Janeiro</item>
+                              <item id="saint-helena" translatable="yes">Saint Helena</item>
+                              <item id="singapore" translatable="yes">Singapore</item>
+                              <item id="sydney_australia" translatable="yes">Syndey</item>
+                              <item id="tehran_iran" translatable="yes">Tehran</item>
+                              <item id="tokyo_japan" translatable="yes">Tokyo</item>
+                            </items>
+                          </object>
+                          <packing>
+                            <property name="left-attach">1</property>
+                            <property name="top-attach">0</property>
+                          </packing>
+                        </child>
+                      </object>
+                    </child>
+                    <child type="label">
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">City Select</property>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="left-attach">0</property>
+                    <property name="top-attach">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkExpander" id="settingsExpander">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="halign">end</property>
+                    <property name="valign">end</property>
+                    <child>
+                      <!-- n-columns=2 n-rows=2 -->
+                      <object class="GtkGrid">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="label" translatable="yes">Dark Mode:</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">0</property>
+                            <property name="top-attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <!-- n-columns=1 n-rows=6 -->
+                          <object class="GtkGrid" id="layers">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="halign">center</property>
+                            <property name="valign">end</property>
+                            <child>
+                              <object class="GtkCheckButton" id="featureNameToggle">
+                                <property name="label" translatable="yes">Feature Names</property>
+                                <property name="name">featurename</property>
+                                <property name="visible">True</property>
+                                <property name="can-focus">True</property>
+                                <property name="receives-default">False</property>
+                                <property name="active">True</property>
+                                <property name="draw-indicator">True</property>
+                              </object>
+                              <packing>
+                                <property name="left-attach">0</property>
+                                <property name="top-attach">1</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkCheckButton" id="streetsToggle">
+                                <property name="label" translatable="yes">Streets</property>
+                                <property name="name">street</property>
+                                <property name="visible">True</property>
+                                <property name="can-focus">True</property>
+                                <property name="receives-default">False</property>
+                                <property name="active">True</property>
+                                <property name="draw-indicator">True</property>
+                              </object>
+                              <packing>
+                                <property name="left-attach">0</property>
+                                <property name="top-attach">2</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkCheckButton" id="streetNameToggle">
+                                <property name="label" translatable="yes">Street Names</property>
+                                <property name="name">streetname</property>
+                                <property name="visible">True</property>
+                                <property name="can-focus">True</property>
+                                <property name="receives-default">False</property>
+                                <property name="active">True</property>
+                                <property name="draw-indicator">True</property>
+                              </object>
+                              <packing>
+                                <property name="left-attach">0</property>
+                                <property name="top-attach">3</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkCheckButton" id="featuresToggle">
+                                <property name="label" translatable="yes">Features</property>
+                                <property name="use-action-appearance">True</property>
+                                <property name="name">feature</property>
+                                <property name="visible">True</property>
+                                <property name="can-focus">True</property>
+                                <property name="receives-default">False</property>
+                                <property name="active">True</property>
+                                <property name="draw-indicator">True</property>
+                              </object>
+                              <packing>
+                                <property name="left-attach">0</property>
+                                <property name="top-attach">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkCheckButton" id="poiToggle">
+                                <property name="label" translatable="yes">POI Icons</property>
+                                <property name="name">icon</property>
+                                <property name="visible">True</property>
+                                <property name="can-focus">True</property>
+                                <property name="receives-default">False</property>
+                                <property name="active">True</property>
+                                <property name="draw-indicator">True</property>
+                              </object>
+                              <packing>
+                                <property name="left-attach">0</property>
+                                <property name="top-attach">4</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkCheckButton" id="poiNameToggle">
+                                <property name="label" translatable="yes">POI Names</property>
+                                <property name="name">poiname</property>
+                                <property name="visible">True</property>
+                                <property name="can-focus">True</property>
+                                <property name="receives-default">False</property>
+                                <property name="active">True</property>
+                                <property name="draw-indicator">True</property>
+                              </object>
+                              <packing>
+                                <property name="left-attach">0</property>
+                                <property name="top-attach">5</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="left-attach">1</property>
+                            <property name="top-attach">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="halign">start</property>
+                            <property name="valign">start</property>
+                            <property name="label" translatable="yes">Layers:</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">0</property>
+                            <property name="top-attach">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkSwitch" id="DarkModeSwitch">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">1</property>
+                            <property name="top-attach">0</property>
+                          </packing>
+                        </child>
+                      </object>
+                    </child>
+                    <child type="label">
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">Settings</property>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="left-attach">0</property>
+                    <property name="top-attach">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="helpButton">
+                    <property name="label" translatable="yes">Help</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                  </object>
+                  <packing>
+                    <property name="left-attach">0</property>
+                    <property name="top-attach">2</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="index">2</property>
+              </packing>
+            </child>
+            <child type="overlay">
+              <!-- n-columns=4 n-rows=5 -->
+              <object class="GtkGrid" id="poiSelectGrid">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="halign">end</property>
+                <property name="valign">start</property>
+                <child>
+                  <object class="GtkButton" id="poiSelectButton">
+                    <property name="label" translatable="yes">GO</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                  </object>
+                  <packing>
+                    <property name="left-attach">3</property>
+                    <property name="top-attach">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkComboBoxText" id="poiSelectBox">
+                    <property name="name">Find Closest:</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="has-entry">True</property>
+                    <items>
+                      <item id="restaurant" translatable="yes">Restaurant</item>
+                      <item id="bar" translatable="yes">Bar</item>
+                      <item id="parking" translatable="yes">Parking</item>
+                      <item id="hospital" translatable="yes">Hospital</item>
+                      <item id="bank" translatable="yes">Bank</item>
+                      <item id="cafe" translatable="yes">Cafe</item>
+                    </items>
+                    <child internal-child="entry">
+                      <object class="GtkEntry" id="poiEntry">
+                        <property name="can-focus">False</property>
+                        <property name="placeholder-text" translatable="yes">Find Closest...</property>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="left-attach">2</property>
+                    <property name="top-attach">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkExpander">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <child>
+                      <!-- n-columns=3 n-rows=8 -->
+                      <object class="GtkGrid" id="InnerGrid">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="halign">end</property>
+                        <property name="margin-top">5</property>
+                        <child>
+                          <object class="GtkButton" id="UpButton">
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">True</property>
+                            <child>
+                              <object class="GtkArrow" id="UpArrow">
+                                <property name="can-focus">False</property>
+                                <property name="arrow-type">up</property>
+                              </object>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="left-attach">1</property>
+                            <property name="top-attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="DownButton">
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">True</property>
+                            <child>
+                              <object class="GtkArrow" id="DownArrow">
+                                <property name="can-focus">False</property>
+                                <property name="arrow-type">down</property>
+                              </object>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="left-attach">1</property>
+                            <property name="top-attach">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="LeftButton">
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">True</property>
+                            <child>
+                              <object class="GtkArrow" id="LeftArrow">
+                                <property name="can-focus">False</property>
+                                <property name="arrow-type">left</property>
+                              </object>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="left-attach">0</property>
+                            <property name="top-attach">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="RightButton">
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">True</property>
+                            <child>
+                              <object class="GtkArrow" id="RightArrow">
+                                <property name="can-focus">False</property>
+                              </object>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="left-attach">2</property>
+                            <property name="top-attach">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="ZoomInButton">
+                            <property name="label" translatable="yes">Zoom In</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">True</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">0</property>
+                            <property name="top-attach">3</property>
+                            <property name="width">3</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="ZoomOutButton">
+                            <property name="label" translatable="yes">Zoom Out</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">True</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">0</property>
+                            <property name="top-attach">4</property>
+                            <property name="width">3</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="ZoomFitButton">
+                            <property name="label" translatable="yes">Zoom Fit</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">True</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">0</property>
+                            <property name="top-attach">5</property>
+                            <property name="width">3</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="ProceedButton">
+                            <property name="label" translatable="yes">Proceed</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">True</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">0</property>
+                            <property name="top-attach">6</property>
+                            <property name="width">3</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                      </object>
+                    </child>
+                    <child type="label">
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="halign">end</property>
+                        <property name="label" translatable="yes">Controls</property>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="left-attach">3</property>
+                    <property name="top-attach">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkScrolledWindow" id="DirectionsScroll">
+                    <property name="can-focus">True</property>
+                    <property name="shadow-type">in</property>
+                    <child>
+                      <object class="GtkTextView" id="DirText">
+                        <property name="can-focus">True</property>
+                        <property name="editable">False</property>
+                        <property name="wrap-mode">word</property>
+                        <property name="cursor-visible">False</property>
+                        <property name="buffer">directionsBuffer</property>
+                        <property name="accepts-tab">False</property>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="left-attach">0</property>
+                    <property name="top-attach">2</property>
+                    <property name="width">4</property>
+                    <property name="height">3</property>
+                  </packing>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+              </object>
+              <packing>
+                <property name="index">23</property>
+              </packing>
+            </child>
+            <child type="overlay">
+              <!-- n-columns=3 n-rows=3 -->
+              <object class="GtkGrid" id="findPathGrid">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="halign">start</property>
+                <property name="valign">end</property>
+                <child>
+                  <object class="GtkComboBoxText" id="searchInter1">
+                    <property name="name">searchInterOne</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="margin-top">1</property>
+                    <property name="has-entry">True</property>
+                    <child internal-child="entry">
+                      <object class="GtkEntry" id="inter_entry1">
+                        <property name="name">1</property>
+                        <property name="can-focus">True</property>
+                        <property name="placeholder-text" translatable="yes">First Intersection</property>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="left-attach">2</property>
+                    <property name="top-attach">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkComboBoxText" id="searchInter2">
+                    <property name="name">searchInter2</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="has-entry">True</property>
+                    <child internal-child="entry">
+                      <object class="GtkEntry" id="inter_entry2">
+                        <property name="name">1</property>
+                        <property name="can-focus">True</property>
+                        <property name="placeholder-text" translatable="yes">Second Intersection</property>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="left-attach">2</property>
+                    <property name="top-attach">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="intersectionButton">
+                    <property name="label">Find</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <property name="image-position">top</property>
+                    <property name="always-show-image">True</property>
+                  </object>
+                  <packing>
+                    <property name="left-attach">2</property>
+                    <property name="top-attach">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkSwitch" id="pathModeToggle">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                  </object>
+                  <packing>
+                    <property name="left-attach">0</property>
+                    <property name="top-attach">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="halign">end</property>
+                    <property name="valign">start</property>
+                    <property name="margin-left">2</property>
+                    <property name="margin-right">6</property>
+                    <property name="margin-start">2</property>
+                    <property name="margin-end">6</property>
+                    <property name="margin-top">16</property>
+                    <property name="label" translatable="yes">Path Mode</property>
+                  </object>
+                  <packing>
+                    <property name="left-attach">0</property>
+                    <property name="top-attach">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+              </object>
+              <packing>
+                <property name="index">3</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="left-attach">0</property>
+            <property name="top-attach">0</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
